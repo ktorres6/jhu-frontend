@@ -44,6 +44,9 @@ section>div {
 
 .content {
   clear: right;
+  height: 70px;
+  overflow-y: auto;
+  cursor: move;
 }
 
 #chicken {

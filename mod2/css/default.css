@@ -111,6 +111,11 @@ section>div {
 
 /** Mobile Devices <= 767px */
 @media (max-width: 767px) {
+  .title {
+    widht: 100%;
+    float: none;
+  }
+
   .h1-lg-md {
     font-size: 0em;
     margin-top: 0px;

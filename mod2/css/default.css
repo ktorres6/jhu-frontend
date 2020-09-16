@@ -51,7 +51,7 @@ section>div {
   clear: right;
   height: 70px;
   overflow-y: auto;
-  cursor: move;
+  cursor: ns-resize;
 }
 
 #chicken {

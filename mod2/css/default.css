@@ -42,6 +42,11 @@ section>div {
   float: right;
 }
 
+.title2 {
+  font-size: 1.5em;
+  text-align: center;
+}
+
 .content {
   clear: right;
   height: 70px;
@@ -77,6 +82,12 @@ section>div {
     margin-bottom: 0px;
   }
 
+  .title2 {
+    font-size: 0em;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
   .col-lg-4 {
     float: left;
     width: 33.33%;
@@ -98,6 +109,12 @@ section>div {
     margin-bottom: 0px;
   }
 
+  .title2 {
+    font-size: 0em;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
   .col-md-6 {
     float: left;
     width: 50%;
@@ -112,8 +129,15 @@ section>div {
 /** Mobile Devices <= 767px */
 @media (max-width: 767px) {
   .title {
-    widht: 100%;
+    font-size: 0em;
+    margin-bottom: 0px;
+    border: none;
     float: none;
+  }
+
+  .title2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
   }
 
   .h1-lg-md {

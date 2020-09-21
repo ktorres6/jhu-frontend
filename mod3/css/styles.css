@@ -1,0 +1,19 @@
+.navbar-brand h1 {
+  padding-top: 0px;
+  margin-top: -10px;
+}
+
+.navbar-brand a:hover, .navbar-brand a:focus {
+  text-decoration: none;
+}
+
+#header-nav {
+  background-color: #f6b319;
+  border-radius: 0;
+  border: 0;
+}
+
+#collapsable-nav a {
+  font-size: 1.2em;
+  text-align: center;
+}

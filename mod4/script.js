@@ -68,4 +68,22 @@ for (var i = 0; i<names.length; i++) {
   }
 }
 
+// Part 2.b
+function great(name) {
+  var firstLetter = name.charAt(0).toLowerCase();
+  var retVal = '';
+  if (firstLetter == 'j') {
+    // byeSpeaker.xxxx
+     retVal = win.byeSpeaker.speakSimple(name);
+  } else {
+    // helloSpeaker.xxxx
+     retVal = win.helloSpeaker.speakSimple(name);
+  }
+  console.log(retVal);
+  return retVal;
+};
+
+var mNames = names.map(x => great(x));
+
+
 })(window);

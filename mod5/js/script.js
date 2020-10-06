@@ -22,6 +22,7 @@ var menuItemsUrl =
   "https://davids-restaurant.herokuapp.com/menu_items.json?category=";
 var menuItemsTitleHtml = "snippets/menu-items-title.html";
 var menuItemHtml = "snippets/menu-item.html";
+var aboutHtml = "snippets/about-snippet.html";
 
 // Convenience function for inserting innerHTML for 'select'
 var insertHtml = function (selector, html) {
@@ -155,6 +156,32 @@ dc.loadMenuItems = function (categoryShort) {
     buildAndShowMenuItemsHTML);
 };
 
+// Retrieve the about.html snippet
+dc.loadAbout = function () {
+  $ajaxUtils.sendGetRequest(
+    homeHtmlUrl,
+    function (homeHtml) {
+      $ajaxUtils.sendGetRequest(
+        aboutHtml,
+        function (about) {
+          // add a div container to float the text
+          var insertAbout = "<div>" + about;
+          // Random number from 1 to 5 (inclusive)
+          var randomNum = Math.floor(Math.random() * 5) + 1;
+          for ( var i = 1; i < 6; i++ ) {
+            if ( i <= randomNum ) {
+              insertAbout = insertProperty(insertAbout, "star" + i, "fa fa-star");
+            } else {
+              insertAbout = insertProperty(insertAbout, "star" + i, "fa fa-star-o");
+            }
+          }
+          insertAbout += "<i class='float-left'> " + randomNum + "-star rating</i></div>";
+          insertHtml("#main-content", insertAbout);
+        },
+        false);
+    },
+    false);
+};
 
 // Builds HTML for the categories page based on the data
 // from the server

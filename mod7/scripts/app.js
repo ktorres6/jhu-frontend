@@ -4,7 +4,8 @@
   angular.module('ShoppingListCheckOff', [])
     .controller('ToBuyController', ToBuyController)
     .controller('AlreadyBoughtController', AlreadyBoughtController)
-    .service('ShoppingListCheckOffService', ShoppingListCheckOffService);
+    .service('ShoppingListCheckOffService', ShoppingListCheckOffService)
+    .filter('ng$', AngularDollarFilter);
 
   ToBuyController.$inject = ['ShoppingListCheckOffService'];
   // To buy controller
@@ -44,23 +45,28 @@
     function initializeList() {
       var item1 = {
         name: "milk",
-        quantity: 1
+        quantity: 1,
+        pricePerItem: 2.59
       };
       var item2 = {
         name: "cookies",
-        quantity: 10
+        quantity: 10,
+        pricePerItem: 1.25
       };
       var item3 = {
         name: "bread",
-        quantity: 1
+        quantity: 1,
+        pricePerItem: 3.99
       };
       var item4 = {
         name: "chicken",
-        quantity: 4
+        quantity: 4,
+        pricePerItem: 3.59
       };
       var item5 = {
         name: "ice cream",
-        quantity: 2
+        quantity: 2,
+        pricePerItem: 4.29
       };
       return [item1, item2, item3, item4, item5];
     };
@@ -79,4 +85,9 @@
     };
   }
 
+  function AngularDollarFilter () {
+    return function (input) {
+      return "$$$" + input;
+    }
+  }
 })();

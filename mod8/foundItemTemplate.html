@@ -1,0 +1,7 @@
+<ul class="col-xs-12">
+  <li ng-repeat="item in menu.items">
+    {{item.name}}
+    <button ng-click="menu.onRemove({index:$index})">Don't want this one</button>
+  </li>
+</ul>
+<div ng-if="menu.empty()">Nothing Found</div>

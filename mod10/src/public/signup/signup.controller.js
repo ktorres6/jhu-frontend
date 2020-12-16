@@ -3,15 +3,14 @@
 angular.module('public')
 .controller('SignupController', SignupController);
 
+
 SignupController.$inject =['UserService', 'MenuService']
 function SignupController(UserService, MenuService) {
   var signup = this;
   signup.completed = UserService.registered;
   signup.error = false;
-  signup.submit = function () {
-    signup.completed = true;
-    UserService.setUser(signup.user);
 
+  signup.testMenu = function () {
     // check for the menu number
     if ( signup.user.menuNum ) {
       var promise = MenuService.getMenuItem(signup.user.menuNum);
@@ -24,10 +23,12 @@ function SignupController(UserService, MenuService) {
     } else {
       UserService.setFavorite('');
     }
+  }
 
+  signup.submit = function () {
+    signup.completed = true;
+    UserService.setUser(signup.user);
   };
-
-
 }
 
 })();

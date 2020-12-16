@@ -33,8 +33,9 @@
         </span>
       </div>
       <div class="col-xs-12">
-        Menu Number:
-        <input type="text" name="menuNum" ng-model="signup.user.menuNum">
+        Favorite Menu Number:
+        <input type="text" name="menuNum" ng-blur="signup.testMenu()"
+        ng-model="signup.user.menuNum">
         <span ng-if="signup.error">
           No such menu item exists.
         </span>

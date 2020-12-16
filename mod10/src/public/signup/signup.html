@@ -1,0 +1,50 @@
+<div class="container">
+  <fieldset>
+    <legend>Newsletter Sign Up</legend>
+    <form class="row" name="signupForm" novalidate>
+      <div class="col-xs-12">
+        First Name:
+        <input type="text" name="fname" ng-model="signup.user.fname" required>
+        <span ng-if="signupForm.fname.$error.required && signupForm.fname.$touched">
+          First name is required
+        </span>
+      </div>
+      <div class="col-xs-12">
+        Last Name:
+        <input type="text" name="lname" ng-model="signup.user.lname" required>
+        <span ng-if="signupForm.lname.$error.required && signupForm.lname.$touched">
+          Last name is required
+        </span>
+      </div>
+      <div class="col-xs-12">
+        Email:
+        <input type="email" name="email" ng-model="signup.user.email" required>
+        <span ng-if="signupForm.email.$invalid && signupForm.email.$touched">
+          Must be a valid email address: handle@domain format
+        </span>
+      </div>
+      <div class="col-xs-12">
+        Phone:
+        <input type="tel" name="phone" ng-model="signup.user.phone"
+        required pattern="(\d{10})">
+
+        <span ng-if="signupForm.phone.$invalid && signupForm.phone.$touched">
+          Phone must be 10 digits.
+        </span>
+      </div>
+      <div class="col-xs-12">
+        Menu Number:
+        <input type="text" name="menuNum" ng-model="signup.user.menuNum">
+      </div>
+      <div class="col-xs-12">
+        <button ng-disabled="signupForm.$invalid"
+        ng-click="signup.submit()">Sign Up</button>
+      </div>
+    </form>
+  </fieldset>
+  <div>
+    <span ng-if="signup.completed">
+      Your information has been saved.
+    </span>
+  </div>
+</div>

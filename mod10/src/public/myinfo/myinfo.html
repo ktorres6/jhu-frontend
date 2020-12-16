@@ -4,7 +4,17 @@
       Name: {{myinfo.user.fname}} {{myinfo.user.lname}} <br>
       Email: {{myinfo.user.email}} <br>
       Phone: {{myinfo.user.phone}} <br>
-      Favorite Menu Item: {{myinfo.user.menuNum}}
+      Favorite Menu Item:
+      <span ng-hide="!myinfo.fav">
+        {{myinfo.fav.name}} <br>
+        Description: {{myinfo.fav.description}} <br>
+        <img class="img-responsive" width="250" height="150"
+        ng-src="{{myinfo.basePath}}/images/{{myinfo.fav.short_name}}.jpg">
+      </span>
+    </div>
+    <div class="col-xs-12" ng-hide="myinfo.ready">
+      Not Signed Up Yet.
+      <a ui-sref="public.signup">Sign Up Now!</a>
     </div>
   </div>
 </div>

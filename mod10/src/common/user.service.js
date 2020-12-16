@@ -16,6 +16,10 @@ function UserService() {
   service.getUser = function () {
     return service.user;
   }
+
+  service.setFavorite = function(menuItem) {
+    service.fav = menuItem;
+  }
 }
 
 
